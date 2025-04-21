@@ -1,0 +1,21 @@
+-------------- Test Case 1 --------------
+Test case 1: Reset the FIFO
+FIFO reset, pt_rd: 0, pt_wr: 0
+FIFO empty: 1, FIFO full: 1
+FIFO data: 00
+=> TestCase1: PASS
+-------------- Test Case 2 --------------
+Test case 2: Write data until full
+=> TestCase2: PASS
+-------------- Test Case 3 --------------
+Test case 3: Read data until empty
+=> TestCase3: PASS
+-------------- Test Case 4 --------------
+FIFO data: i_data =  29, o_data =   0
+FIFO data: i_data =  30, o_data =   0
+FIFO data: i_data =  31, o_data =   0
+FIFO data: i_data =  32, o_data =   0
+FIFO data: i_data =  33, o_data =  31
+-------------- Test Case 5 --------------
+End of simulation
+- tb_fifo.v:188: Verilog $finish
