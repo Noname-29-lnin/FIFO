@@ -61,68 +61,18 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__stl(Vtb_fifo___024root* vl
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
     }
-    if ((2ULL & vlSelf->__VstlTriggered.word(0U))) {
-        VL_DBG_MSGF("         'stl' region trigger index 1 is active: @([hybrid] tb_fifo.uut.n_ptr_wr)\n");
-    }
 }
 #endif  // VL_DEBUG
 
-VL_ATTR_COLD void Vtb_fifo___024root___stl_comb__TOP__0(Vtb_fifo___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___stl_comb__TOP__0\n"); );
-    // Body
-    vlSelf->tb_fifo__DOT__o_full = (1U & (~ (IData)(
-                                                    (0U 
-                                                     != 
-                                                     ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr) 
-                                                      ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd))))));
-    if ((((~ (IData)(vlSelf->tb_fifo__DOT__o_full)) 
-          & (1U == (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
-         & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))) {
-        vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = 0U;
-    } else if (((~ (IData)(vlSelf->tb_fifo__DOT__o_full)) 
-                & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))) {
-        vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = 
-            (7U & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)));
-    }
-}
-
-VL_ATTR_COLD void Vtb_fifo___024root___stl_sequent__TOP__0(Vtb_fifo___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___stl_sequent__TOP__0\n"); );
-    // Body
-    vlSelf->tb_fifo__DOT__o_empty = (1U & (~ (IData)(
-                                                     (0U 
-                                                      != 
-                                                      ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
-                                                       ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))))));
-    if ((((~ (IData)(vlSelf->tb_fifo__DOT__o_empty)) 
-          & (1U == (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd))) 
-         & (IData)(vlSelf->tb_fifo__DOT__i_rd_en))) {
-        vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = 0U;
-    } else if (((~ (IData)(vlSelf->tb_fifo__DOT__o_empty)) 
-                & (IData)(vlSelf->tb_fifo__DOT__i_rd_en))) {
-        vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = 
-            (7U & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)));
-    }
-}
+void Vtb_fifo___024root___act_comb__TOP__0(Vtb_fifo___024root* vlSelf);
 
 VL_ATTR_COLD void Vtb_fifo___024root___eval_stl(Vtb_fifo___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_stl\n"); );
     // Body
-    if ((3ULL & vlSelf->__VstlTriggered.word(0U))) {
-        Vtb_fifo___024root___stl_comb__TOP__0(vlSelf);
-    }
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
-        Vtb_fifo___024root___stl_sequent__TOP__0(vlSelf);
-        vlSelf->__Vm_traceActivity[3U] = 1U;
-        vlSelf->__Vm_traceActivity[2U] = 1U;
-        vlSelf->__Vm_traceActivity[1U] = 1U;
-        vlSelf->__Vm_traceActivity[0U] = 1U;
+        Vtb_fifo___024root___act_comb__TOP__0(vlSelf);
     }
 }
 
@@ -153,16 +103,13 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__act(Vtb_fifo___024root* vl
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @([hybrid] tb_fifo.uut.n_ptr_wr)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge tb_fifo.i_clk or negedge tb_fifo.i_rst_n)\n");
     }
     if ((2ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge tb_fifo.i_clk or negedge tb_fifo.i_rst_n)\n");
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge tb_fifo.i_clk)\n");
     }
     if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
         VL_DBG_MSGF("         'act' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
-    }
-    if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge tb_fifo.i_clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -177,16 +124,13 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__nba(Vtb_fifo___024root* vl
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @([hybrid] tb_fifo.uut.n_ptr_wr)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge tb_fifo.i_clk or negedge tb_fifo.i_rst_n)\n");
     }
     if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge tb_fifo.i_clk or negedge tb_fifo.i_rst_n)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge tb_fifo.i_clk)\n");
     }
     if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
         VL_DBG_MSGF("         'nba' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
-    }
-    if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge tb_fifo.i_clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -202,34 +146,25 @@ VL_ATTR_COLD void Vtb_fifo___024root___ctor_var_reset(Vtb_fifo___024root* vlSelf
     vlSelf->tb_fifo__DOT__i_rd_en = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_data = VL_RAND_RESET_I(8);
     vlSelf->tb_fifo__DOT__o_data = VL_RAND_RESET_I(8);
-    vlSelf->tb_fifo__DOT__o_full = VL_RAND_RESET_I(1);
-    vlSelf->tb_fifo__DOT__o_empty = VL_RAND_RESET_I(1);
-    vlSelf->tb_fifo__DOT__pt_wr = VL_RAND_RESET_I(3);
-    vlSelf->tb_fifo__DOT__pt_rd = VL_RAND_RESET_I(3);
-    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
         vlSelf->tb_fifo__DOT__value_wr[__Vi0] = VL_RAND_RESET_I(8);
     }
-    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
         vlSelf->tb_fifo__DOT__value_rd[__Vi0] = VL_RAND_RESET_I(8);
     }
     vlSelf->tb_fifo__DOT__count_wr = VL_RAND_RESET_I(32);
     vlSelf->tb_fifo__DOT__count_rd = VL_RAND_RESET_I(32);
     vlSelf->tb_fifo__DOT__match_count = VL_RAND_RESET_I(32);
-    vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd = VL_RAND_RESET_I(3);
-    vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr = VL_RAND_RESET_I(3);
-    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = VL_RAND_RESET_I(3);
-    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = VL_RAND_RESET_I(3);
-    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
-        vlSelf->tb_fifo__DOT__uut__DOT__lut_mem__DOT__mem[__Vi0] = VL_RAND_RESET_I(8);
+    vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = VL_RAND_RESET_I(5);
+    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
+        vlSelf->tb_fifo__DOT__uut__DOT__RAM__DOT__mem[__Vi0] = VL_RAND_RESET_I(8);
     }
-    vlSelf->tb_fifo__DOT__uut__DOT__lut_mem__DOT____Vlvbound_h2ccb6805__0 = VL_RAND_RESET_I(8);
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__uut__DOT__n_ptr_wr__0 = VL_RAND_RESET_I(3);
-    vlSelf->__VstlDidInit = 0;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__uut__DOT__n_ptr_wr__1 = VL_RAND_RESET_I(3);
     vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_rst_n__0 = VL_RAND_RESET_I(1);
-    vlSelf->__VactDidInit = 0;
-    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }

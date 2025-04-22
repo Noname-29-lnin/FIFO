@@ -3,7 +3,7 @@ module tb_fifo();
 
   // Parameters
   parameter DATA_WIDTH = 8;
-  parameter SIZE_DEPTH = 8;
+  parameter SIZE_DEPTH = 16;
   parameter ADDR_WIDTH = $clog2(SIZE_DEPTH);
 
   // Signals
@@ -13,7 +13,6 @@ module tb_fifo();
   reg [DATA_WIDTH-1:0] i_data;
   reg [DATA_WIDTH-1:0] o_data;
   reg o_full, o_empty;
-  reg [ADDR_WIDTH-1:0] pt_wr, pt_rd; // FIFO internal pointers (assumed in FIFO module)
 
   // Memory to store write and read data
   reg [DATA_WIDTH-1:0] value_wr [0:SIZE_DEPTH-1];
@@ -49,32 +48,29 @@ always #5 i_clk = ~i_clk;
   initial
   begin
     // Initialize signals
-    i_rst_n = 0;
-    i_wr_en = 0;
-    i_rd_en = 0;
-    i_data = 0;
     count_wr = 0;
     count_rd = 0;
 
     // Test case 1: Reset the FIFO
     $display("-------------- Test Case 1 --------------");
     #10;
-    i_rst_n = 0;
+    i_rst_n = 1;
+    #10;
     @(posedge i_clk);
     i_wr_en = 1;
     i_rd_en = 0;
     i_data = 8'h29;
+    
     #10;
-
-    i_rst_n = 1;
-    @(posedge i_clk);
+    i_rst_n = 0;
     i_wr_en = 0;
-    i_rd_en = 1;
+    i_rd_en = 0;
+    #10;
     $display("Test case 1: Reset the FIFO");
-    $display("FIFO reset, pt_rd: %d, pt_wr: %d", pt_rd, pt_wr);
+    $display("FIFO reset, pt_rd: %d, pt_wr: %d", uut.ptr_rd, uut.ptr_wr);
     $display("FIFO empty: %d, FIFO full: %d", o_empty, o_full);
     $display("FIFO data: %h", o_data);
-    $display("=> TestCase1: %s", (o_data == 8'h00) ? "PASS" : "FAIL");
+    $display("=> TestCase1: %s", ((uut.ptr_rd == 0)&&(uut.ptr_wr == 0)) ? "PASS" : "FAIL");
 
     // Test case 2: Write data until full
     $display("-------------- Test Case 2 --------------");
@@ -89,6 +85,7 @@ always #5 i_clk = ~i_clk;
       i_wr_en = 1;
       i_rd_en = 0;
       i_data = $random;
+      $display("Time = %t, o_full = %b, ptr_wr = %d, ptr_rd = %d",$time, o_full, uut.ptr_wr, uut.ptr_rd);
       #10;
     end
     i_wr_en = 0;
@@ -107,6 +104,7 @@ always #5 i_clk = ~i_clk;
       #10;
       value_rd[count_rd] = o_data;
       count_rd = count_rd + 1;
+      $display("Time = %t, o_empty = %b, ptr_wr = %d, ptr_rd = %d", $time, o_empty, uut.ptr_wr, uut.ptr_rd);
     end
     i_rd_en = 0;
 
@@ -142,13 +140,13 @@ always #5 i_clk = ~i_clk;
     $display("FIFO data: i_data = %d, o_data = %d",i_data, o_data);
     
     @(posedge i_clk);
-    i_wr_en = 0;
+    i_wr_en = 1;
     i_rd_en = 1;
     i_data  = 32;
     $display("FIFO data: i_data = %d, o_data = %d",i_data, o_data);
 
     @(posedge i_clk);
-    i_wr_en = 0;
+    i_wr_en = 1;
     i_rd_en = 1;
     i_data  = 33;
     $display("FIFO data: i_data = %d, o_data = %d",i_data, o_data);
