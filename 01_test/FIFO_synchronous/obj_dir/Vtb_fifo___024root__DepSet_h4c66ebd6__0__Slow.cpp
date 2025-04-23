@@ -146,20 +146,20 @@ VL_ATTR_COLD void Vtb_fifo___024root___ctor_var_reset(Vtb_fifo___024root* vlSelf
     vlSelf->tb_fifo__DOT__i_rd_en = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_data = VL_RAND_RESET_I(8);
     vlSelf->tb_fifo__DOT__o_data = VL_RAND_RESET_I(8);
-    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->tb_fifo__DOT__value_wr[__Vi0] = VL_RAND_RESET_I(8);
     }
-    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->tb_fifo__DOT__value_rd[__Vi0] = VL_RAND_RESET_I(8);
     }
     vlSelf->tb_fifo__DOT__count_wr = VL_RAND_RESET_I(32);
     vlSelf->tb_fifo__DOT__count_rd = VL_RAND_RESET_I(32);
     vlSelf->tb_fifo__DOT__match_count = VL_RAND_RESET_I(32);
-    vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr = VL_RAND_RESET_I(5);
-    vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd = VL_RAND_RESET_I(5);
-    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = VL_RAND_RESET_I(5);
-    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = VL_RAND_RESET_I(5);
-    for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
+    vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr = VL_RAND_RESET_I(4);
+    vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd = VL_RAND_RESET_I(4);
+    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_wr = VL_RAND_RESET_I(4);
+    vlSelf->tb_fifo__DOT__uut__DOT__n_ptr_rd = VL_RAND_RESET_I(4);
+    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->tb_fifo__DOT__uut__DOT__RAM__DOT__mem[__Vi0] = VL_RAND_RESET_I(8);
     }
     vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk__0 = VL_RAND_RESET_I(1);

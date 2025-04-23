@@ -3,7 +3,7 @@ module tb_fifo();
 
   // Parameters
   parameter DATA_WIDTH = 8;
-  parameter SIZE_DEPTH = 16;
+  parameter SIZE_DEPTH = 8;
   parameter ADDR_WIDTH = $clog2(SIZE_DEPTH);
 
   // Signals

@@ -1,0 +1,55 @@
+-------------- Test Case 1 --------------
+Test case 1: Reset the FIFO
+FIFO reset, pt_rd:  0, pt_wr:  0
+FIFO empty: 1, FIFO full: 0
+FIFO data: 29
+=> TestCase1: PASS
+-------------- Test Case 2 --------------
+Time =                   65, o_full = 0, ptr_wr =  0, ptr_rd =  0
+Time =                   85, o_full = 0, ptr_wr =  2, ptr_rd =  0
+Time =                  105, o_full = 0, ptr_wr =  4, ptr_rd =  0
+Time =                  125, o_full = 0, ptr_wr =  6, ptr_rd =  0
+Time =                  145, o_full = 1, ptr_wr =  8, ptr_rd =  0
+Time =                  165, o_full = 1, ptr_wr =  8, ptr_rd =  0
+Time =                  185, o_full = 1, ptr_wr =  8, ptr_rd =  0
+Time =                  205, o_full = 1, ptr_wr =  8, ptr_rd =  0
+Time =                  225, o_full = 1, ptr_wr =  8, ptr_rd =  0
+Test case 2: Write data until full
+=> TestCase2: PASS
+-------------- Test Case 3 --------------
+Time =                  255, o_empty = 0, ptr_wr =  8, ptr_rd =  1
+Time =                  275, o_empty = 0, ptr_wr =  8, ptr_rd =  3
+Time =                  295, o_empty = 0, ptr_wr =  8, ptr_rd =  5
+Time =                  315, o_empty = 0, ptr_wr =  8, ptr_rd =  7
+Time =                  335, o_empty = 1, ptr_wr =  8, ptr_rd =  8
+Time =                  355, o_empty = 1, ptr_wr =  8, ptr_rd =  8
+Time =                  375, o_empty = 1, ptr_wr =  8, ptr_rd =  8
+Time =                  395, o_empty = 1, ptr_wr =  8, ptr_rd =  8
+Test case 3: Read data until empty
+=> TestCase3: PASS
+-------------- Test Case 4 --------------
+FIFO data: i_data =  29, o_data = 183
+FIFO data: i_data =  30, o_data =  29
+FIFO data: i_data =  31, o_data =  29
+FIFO data: i_data =  32, o_data =  30
+FIFO data: i_data =  33, o_data =  31
+-------------- Test Case 5 --------------
+Input data
+Time=                 555, i_wr_en=1, i_rd_en=0, i_data = 53, o_full=0
+Time=                 565, i_wr_en=1, i_rd_en=0, i_data = 21, o_full=0
+Time=                 575, i_wr_en=1, i_rd_en=0, i_data = e1, o_full=0
+Time=                 585, i_wr_en=1, i_rd_en=0, i_data = c5, o_full=0
+Time=                 595, i_wr_en=1, i_rd_en=0, i_data = 82, o_full=0
+Time=                 605, i_wr_en=1, i_rd_en=0, i_data = 62, o_full=0
+Time=                 615, i_wr_en=1, i_rd_en=0, i_data = 35, o_full=1
+Output data
+Time=                 635, i_wr_en=0, i_rd_en=1, o_data = 35, o_empty=0
+Time=                 645, i_wr_en=0, i_rd_en=1, o_data = 21, o_empty=0
+Time=                 655, i_wr_en=0, i_rd_en=1, o_data = 53, o_empty=0
+Time=                 665, i_wr_en=0, i_rd_en=1, o_data = 21, o_empty=0
+Time=                 675, i_wr_en=0, i_rd_en=1, o_data = e1, o_empty=0
+Time=                 685, i_wr_en=0, i_rd_en=1, o_data = c5, o_empty=0
+Time=                 695, i_wr_en=0, i_rd_en=1, o_data = 82, o_empty=0
+Time=                 705, i_wr_en=0, i_rd_en=1, o_data = 62, o_empty=1
+End of simulation
+- tb_fifo.v:178: Verilog $finish

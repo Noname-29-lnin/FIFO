@@ -31,7 +31,7 @@ assign n_ptr_rd = (update_rd) ? ptr_rd + 1 : ptr_rd;
 
 assign o_empty = (ptr_rd == ptr_wr) ? 1 : 0;
 // assign o_full = (n_ptr_wr == ptr_rd) ? 1 : 0;
-assign o_full = (~|(ptr_rd[SIZE_ADDR-1:0] ^ ptr_wr[SIZE_ADDR-1:0])) && (ptr_rd[SIZE_ADDR] ^ ptr_wr[SIZE_ADDR]);
+assign o_full = (~|(ptr_rd[SIZE_ADDR-1:0] ^ ptr_wr[SIZE_ADDR-1:0])) & (ptr_rd[SIZE_ADDR] ^ ptr_wr[SIZE_ADDR]);
 always_ff @(posedge i_clk or negedge i_rst_n) begin 
     if(~i_rst_n) begin
         ptr_rd <= 0;
