@@ -927,12 +927,74 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
     vlSelf->tb_fifo__DOT__i_data = 0x21U;
     VL_WRITEF("FIFO data: i_data = %3#, o_data = %3#\n-------------- Test Case 5 --------------\n",
               8,vlSelf->tb_fifo__DOT__i_data,8,(IData)(vlSelf->tb_fifo__DOT__o_data));
+    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+                                       "tb_fifo.v", 
+                                       155);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->tb_fifo__DOT__i_rst_n = 0U;
+    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+                                       "tb_fifo.v", 
+                                       156);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->tb_fifo__DOT__i_rst_n = 1U;
+    co_await vlSelf->__VdlySched.delay(0xaULL, nullptr, 
+                                       "tb_fifo.v", 
+                                       157);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_rd_en = 0U;
+    VL_WRITEF("Input data\n");
+    while ((1U & (~ (((0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)) 
+                      == (0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
+                     & ((1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                               >> 4U)) != (1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
+                                                 >> 4U))))))) {
+        co_await vlSelf->__VtrigSched_h51f15efb__0.trigger(0U, 
+                                                           nullptr, 
+                                                           "@(posedge tb_fifo.i_clk)", 
+                                                           "tb_fifo.v", 
+                                                           162);
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->tb_fifo__DOT__i_data = (0xffU & VL_MODDIVS_III(32, (IData)(
+                                                                           VL_RANDOM_I()), (IData)(0x100U)));
+        VL_WRITEF("Time=%t, i_wr_en=%b, i_rd_en=%b, i_data = %x, o_full=%b\n",
+                  64,VL_TIME_UNITED_Q(1),-12,1,(IData)(vlSelf->tb_fifo__DOT__i_wr_en),
+                  1,vlSelf->tb_fifo__DOT__i_rd_en,8,
+                  (IData)(vlSelf->tb_fifo__DOT__i_data),
+                  1,(((0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)) 
+                      == (0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
+                     & ((1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                               >> 4U)) != (1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
+                                                 >> 4U)))));
+    }
+    co_await vlSelf->__VdlySched.delay(0xaULL, nullptr, 
+                                       "tb_fifo.v", 
+                                       166);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->tb_fifo__DOT__i_wr_en = 0U;
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    VL_WRITEF("Output data\n");
+    while (((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+            != (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) {
+        co_await vlSelf->__VtrigSched_h51f15efb__0.trigger(0U, 
+                                                           nullptr, 
+                                                           "@(posedge tb_fifo.i_clk)", 
+                                                           "tb_fifo.v", 
+                                                           171);
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        VL_WRITEF("Time=%t, i_wr_en=%b, i_rd_en=%b, o_data = %x, o_empty=%b\n",
+                  64,VL_TIME_UNITED_Q(1),-12,1,(IData)(vlSelf->tb_fifo__DOT__i_wr_en),
+                  1,vlSelf->tb_fifo__DOT__i_rd_en,8,
+                  (IData)(vlSelf->tb_fifo__DOT__o_data),
+                  1,((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                     == (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)));
+    }
     co_await vlSelf->__VdlySched.delay(0xc8ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       184);
+                                       176);
     vlSelf->__Vm_traceActivity[2U] = 1U;
     VL_WRITEF("End of simulation\n");
-    VL_FINISH_MT("tb_fifo.v", 186, "");
+    VL_FINISH_MT("tb_fifo.v", 178, "");
     vlSelf->__Vm_traceActivity[2U] = 1U;
 }
 

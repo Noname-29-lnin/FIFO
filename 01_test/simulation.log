@@ -50,5 +50,38 @@ FIFO data: i_data =  31, o_data =  29
 FIFO data: i_data =  32, o_data =  30
 FIFO data: i_data =  33, o_data =  31
 -------------- Test Case 5 --------------
+Input data
+Time=                 875, i_wr_en=1, i_rd_en=0, i_data = 56, o_full=0
+Time=                 885, i_wr_en=1, i_rd_en=0, i_data = fd, o_full=0
+Time=                 895, i_wr_en=1, i_rd_en=0, i_data = f4, o_full=0
+Time=                 905, i_wr_en=1, i_rd_en=0, i_data = 3b, o_full=0
+Time=                 915, i_wr_en=1, i_rd_en=0, i_data = 58, o_full=0
+Time=                 925, i_wr_en=1, i_rd_en=0, i_data = b2, o_full=0
+Time=                 935, i_wr_en=1, i_rd_en=0, i_data = 5c, o_full=0
+Time=                 945, i_wr_en=1, i_rd_en=0, i_data = 1e, o_full=0
+Time=                 955, i_wr_en=1, i_rd_en=0, i_data = 9e, o_full=0
+Time=                 965, i_wr_en=1, i_rd_en=0, i_data = 9e, o_full=0
+Time=                 975, i_wr_en=1, i_rd_en=0, i_data = ee, o_full=0
+Time=                 985, i_wr_en=1, i_rd_en=0, i_data = 10, o_full=0
+Time=                 995, i_wr_en=1, i_rd_en=0, i_data = 76, o_full=0
+Time=                1005, i_wr_en=1, i_rd_en=0, i_data = 63, o_full=0
+Time=                1015, i_wr_en=1, i_rd_en=0, i_data = c0, o_full=1
+Output data
+Time=                1035, i_wr_en=0, i_rd_en=1, o_data = c0, o_empty=0
+Time=                1045, i_wr_en=0, i_rd_en=1, o_data = 21, o_empty=0
+Time=                1055, i_wr_en=0, i_rd_en=1, o_data = 56, o_empty=0
+Time=                1065, i_wr_en=0, i_rd_en=1, o_data = fd, o_empty=0
+Time=                1075, i_wr_en=0, i_rd_en=1, o_data = f4, o_empty=0
+Time=                1085, i_wr_en=0, i_rd_en=1, o_data = 3b, o_empty=0
+Time=                1095, i_wr_en=0, i_rd_en=1, o_data = 58, o_empty=0
+Time=                1105, i_wr_en=0, i_rd_en=1, o_data = b2, o_empty=0
+Time=                1115, i_wr_en=0, i_rd_en=1, o_data = 5c, o_empty=0
+Time=                1125, i_wr_en=0, i_rd_en=1, o_data = 1e, o_empty=0
+Time=                1135, i_wr_en=0, i_rd_en=1, o_data = 9e, o_empty=0
+Time=                1145, i_wr_en=0, i_rd_en=1, o_data = 9e, o_empty=0
+Time=                1155, i_wr_en=0, i_rd_en=1, o_data = ee, o_empty=0
+Time=                1165, i_wr_en=0, i_rd_en=1, o_data = 10, o_empty=0
+Time=                1175, i_wr_en=0, i_rd_en=1, o_data = 76, o_empty=0
+Time=                1185, i_wr_en=0, i_rd_en=1, o_data = 63, o_empty=1
 End of simulation
-- tb_fifo.v:186: Verilog $finish
+- tb_fifo.v:178: Verilog $finish
