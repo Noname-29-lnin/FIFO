@@ -94,6 +94,9 @@ assign o_full = (Count == SIZE_DEPTH);
 assign o_empty = (Count == 0);
 ```
 
+# FIFO ArchSynchronous
+
+
 # Reference
 
 + [Verilog on Intel (Altera) FPGA](https://www.youtube.com/watch?v=9H5fp9FomBA&list=PLFIdP97RY-2JScNwjqORFS-Ry47HN8w_a)

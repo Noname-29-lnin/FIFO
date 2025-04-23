@@ -68,12 +68,14 @@ void Vtb_fifo___024root__trace_chg_0_sub_0(Vtb_fifo___024root* vlSelf, Verilated
         bufp->chgCData(oldp+38,(vlSelf->tb_fifo__DOT__uut__DOT__RAM__DOT__mem[15]),8);
     }
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[4U])) {
-        bufp->chgBit(oldp+39,((((0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)) 
-                                == (0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
-                               & ((1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
-                                         >> 4U)) != 
-                                  (1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
-                                         >> 4U))))));
+        bufp->chgBit(oldp+39,((1U & ((~ (IData)((0U 
+                                                 != 
+                                                 (0xfU 
+                                                  & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                                     ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)))))) 
+                                     & (((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                         ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)) 
+                                        >> 4U)))));
         bufp->chgBit(oldp+40,(((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
                                == (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))));
         bufp->chgCData(oldp+41,(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr),5);
@@ -83,29 +85,26 @@ void Vtb_fifo___024root__trace_chg_0_sub_0(Vtb_fifo___024root* vlSelf, Verilated
     }
     bufp->chgBit(oldp+45,(vlSelf->tb_fifo__DOT__i_clk));
     bufp->chgCData(oldp+46,((0x1fU & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
-                                      + ((~ (((0xfU 
-                                               & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)) 
-                                              == (0xfU 
-                                                  & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
-                                             & ((1U 
-                                                 & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
-                                                    >> 4U)) 
-                                                != 
-                                                (1U 
-                                                 & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
-                                                    >> 4U))))) 
+                                      + ((~ ((~ (IData)(
+                                                        (0U 
+                                                         != 
+                                                         (0xfU 
+                                                          & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                                             ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)))))) 
+                                             & (((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                                 ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)) 
+                                                >> 4U))) 
                                          & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))))),5);
     bufp->chgCData(oldp+47,((0x1fU & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
                                       + (((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
                                           != (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)) 
                                          & (IData)(vlSelf->tb_fifo__DOT__i_rd_en))))),5);
-    bufp->chgBit(oldp+48,(((~ (((0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd)) 
-                                == (0xfU & (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr))) 
-                               & ((1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
-                                         >> 4U)) != 
-                                  (1U & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr) 
-                                         >> 4U))))) 
-                           & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))));
+    bufp->chgBit(oldp+48,(((~ ((~ (IData)((0U != (0xfU 
+                                                  & ((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                                     ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)))))) 
+                               & (((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
+                                   ^ (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)) 
+                                  >> 4U))) & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))));
     bufp->chgBit(oldp+49,((((IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_rd) 
                             != (IData)(vlSelf->tb_fifo__DOT__uut__DOT__ptr_wr)) 
                            & (IData)(vlSelf->tb_fifo__DOT__i_rd_en))));
