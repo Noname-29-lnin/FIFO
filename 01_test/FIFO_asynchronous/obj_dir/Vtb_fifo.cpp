@@ -10,7 +10,6 @@
 Vtb_fifo::Vtb_fifo(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtb_fifo__Syms(contextp(), _vcname__, this)}
-    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

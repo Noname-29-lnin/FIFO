@@ -1,142 +1,27 @@
-Time=0 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=0 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=5 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=5 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=5 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=6 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=6 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=6 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=10 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=10 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=12 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=12 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=15 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=15 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=15 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=18 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=18 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=18 rst_n=0 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=20 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=20 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=24 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=24 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=25 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=25 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=25 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=30 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=30 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=30 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=35 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=35 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=35 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=36 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=36 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
 Test 1 Passed: FIFO is empty at startup
-Time=40 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=40 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=42 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=42 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=42 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=0 rd_en=0 data_wr=00 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=1 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-Time=45 rst_n=1 wr_en=1 rd_en=0 data_wr=01 data_rd=00 empty=0 full=0
-%Error: tb_fifo.v:2: Active region did not converge.
-Aborting...
+Test 2 Passed: FIFO is full after 16 writes
+Test 3 Passed: FIFO is empty after 16 reads
+Test 5 Passed: FIFO remains full, no overwrite
+Test 6 Failed: FIFO state incorrect
+Test Case 7 ---------------------------------
+Time=              846000, rst_n=1, wr_en=0, rd_en=0, data_wr=ff, data_rd=ff, empty=0, full=1
+Time=              858000, rst_n=1, wr_en=0, rd_en=0, data_wr=ff, data_rd=ff, empty=0, full=1
+Time=              870000, rst_n=1, wr_en=0, rd_en=0, data_wr=ff, data_rd=ff, empty=0, full=1
+Time=              882000, rst_n=1, wr_en=0, rd_en=0, data_wr=ff, data_rd=ff, empty=0, full=1
+Time=              894000, rst_n=1, wr_en=1, rd_en=1, data_wr=00, data_rd=ff, empty=0, full=1
+Time=              906000, rst_n=1, wr_en=1, rd_en=1, data_wr=01, data_rd=ff, empty=0, full=0
+Time=              918000, rst_n=1, wr_en=1, rd_en=0, data_wr=02, data_rd=ff, empty=0, full=1
+Time=              930000, rst_n=1, wr_en=0, rd_en=1, data_wr=02, data_rd=ff, empty=0, full=0
+Time=              942000, rst_n=1, wr_en=0, rd_en=0, data_wr=02, data_rd=ff, empty=0, full=0
+Time=              954000, rst_n=1, wr_en=1, rd_en=0, data_wr=03, data_rd=ff, empty=0, full=0
+Time=              966000, rst_n=1, wr_en=1, rd_en=0, data_wr=04, data_rd=ff, empty=0, full=1
+Time=              978000, rst_n=1, wr_en=0, rd_en=0, data_wr=04, data_rd=ff, empty=0, full=1
+Time=              990000, rst_n=1, wr_en=0, rd_en=0, data_wr=04, data_rd=ff, empty=0, full=1
+Time=             1002000, rst_n=1, wr_en=0, rd_en=0, data_wr=04, data_rd=ff, empty=0, full=1
+Time=             1014000, rst_n=1, wr_en=0, rd_en=0, data_wr=04, data_rd=ff, empty=0, full=1
+Time=             1026000, rst_n=1, wr_en=1, rd_en=0, data_wr=05, data_rd=ff, empty=0, full=1
+Time=             1038000, rst_n=1, wr_en=1, rd_en=0, data_wr=06, data_rd=ff, empty=0, full=1
+Time=             1050000, rst_n=1, wr_en=0, rd_en=1, data_wr=06, data_rd=ff, empty=0, full=1
+Time=             1062000, rst_n=1, wr_en=1, rd_en=0, data_wr=07, data_rd=ff, empty=0, full=1
+Time=             1074000, rst_n=1, wr_en=1, rd_en=0, data_wr=08, data_rd=ff, empty=0, full=0
+- tb_fifo.v:152: Verilog $finish

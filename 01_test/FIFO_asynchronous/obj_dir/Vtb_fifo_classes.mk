@@ -33,8 +33,6 @@ VM_CLASSES_SLOW += \
 	Vtb_fifo___024root__Slow \
 	Vtb_fifo___024root__DepSet_ha546d0c1__0__Slow \
 	Vtb_fifo___024root__DepSet_h4c66ebd6__0__Slow \
-	Vtb_fifo___024unit__Slow \
-	Vtb_fifo___024unit__DepSet_h3764a5fd__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

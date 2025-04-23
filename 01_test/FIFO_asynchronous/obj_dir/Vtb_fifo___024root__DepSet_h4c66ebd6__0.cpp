@@ -17,16 +17,12 @@ void Vtb_fifo___024root___eval_initial(Vtb_fifo___024root* vlSelf) {
     Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(vlSelf);
     Vtb_fifo___024root___eval_initial__TOP__Vtiming__1(vlSelf);
     Vtb_fifo___024root___eval_initial__TOP__Vtiming__2(vlSelf);
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__dut__DOT__count__0 
-        = vlSelf->tb_fifo__DOT__dut__DOT__count;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__dut__DOT__count__1 
-        = vlSelf->tb_fifo__DOT__dut__DOT__count;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_rd__0 
-        = vlSelf->tb_fifo__DOT__i_clk_rd;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_rst_n__0 
-        = vlSelf->tb_fifo__DOT__i_rst_n;
     vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_wr__0 
         = vlSelf->tb_fifo__DOT__i_clk_wr;
+    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_rst_n__0 
+        = vlSelf->tb_fifo__DOT__i_rst_n;
+    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_rd__0 
+        = vlSelf->tb_fifo__DOT__i_clk_rd;
 }
 
 VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb_fifo___024root* vlSelf) {
@@ -34,18 +30,48 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_initial__TOP__Vtiming__0\n"); );
     // Body
+    vlSelf->tb_fifo__DOT__i_clk_wr = 0U;
+    while (1U) {
+        co_await vlSelf->__VdlySched.delay(0x1388ULL, 
+                                           nullptr, 
+                                           "tb_fifo.v", 
+                                           41);
+        vlSelf->tb_fifo__DOT__i_clk_wr = (1U & (~ (IData)(vlSelf->tb_fifo__DOT__i_clk_wr)));
+    }
+}
+
+VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__1(Vtb_fifo___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_initial__TOP__Vtiming__1\n"); );
+    // Body
+    vlSelf->tb_fifo__DOT__i_clk_rd = 0U;
+    while (1U) {
+        co_await vlSelf->__VdlySched.delay(0x1770ULL, 
+                                           nullptr, 
+                                           "tb_fifo.v", 
+                                           46);
+        vlSelf->tb_fifo__DOT__i_clk_rd = (1U & (~ (IData)(vlSelf->tb_fifo__DOT__i_clk_rd)));
+    }
+}
+
+VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__2(Vtb_fifo___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_initial__TOP__Vtiming__2\n"); );
+    // Body
     vlSelf->tb_fifo__DOT__i_rst_n = 0U;
     vlSelf->tb_fifo__DOT__i_wr_en = 0U;
     vlSelf->tb_fifo__DOT__i_rd_en = 0U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0U;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       52);
+                                       58);
     vlSelf->tb_fifo__DOT__i_rst_n = 1U;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       55);
-    if (vlSelf->tb_fifo__DOT__o_empty) {
+                                       61);
+    if (((IData)(vlSelf->tb_fifo__DOT__o_empty) & (~ (IData)(vlSelf->tb_fifo__DOT__o_full)))) {
         VL_WRITEF("Test 1 Passed: FIFO is empty at startup\n");
     } else {
         VL_WRITEF("Test 1 Failed: FIFO not empty or full at startup\n");
@@ -54,7 +80,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -62,7 +88,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -70,7 +96,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -78,7 +104,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -86,7 +112,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -94,7 +120,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -102,7 +128,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -110,7 +136,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -118,7 +144,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -126,7 +152,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -134,7 +160,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -142,7 +168,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -150,7 +176,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -158,7 +184,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -166,7 +192,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -174,7 +200,7 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       64);
+                                                       69);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
@@ -182,117 +208,121 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       68);
+                                                       73);
     vlSelf->tb_fifo__DOT__i_wr_en = 0U;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       71);
-    VL_WRITEF("Test 2 Failed: FIFO not full\n");
+                                       76);
+    if (vlSelf->tb_fifo__DOT__o_full) {
+        VL_WRITEF("Test 2 Passed: FIFO is full after 16 writes\n");
+    } else {
+        VL_WRITEF("Test 2 Failed: FIFO not full\n");
+    }
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       80);
+                                                       84);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       83);
+                                                       87);
     vlSelf->tb_fifo__DOT__i_rd_en = 0U;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       86);
+                                       90);
     if (vlSelf->tb_fifo__DOT__o_empty) {
         VL_WRITEF("Test 3 Passed: FIFO is empty after 16 reads\n");
     } else {
@@ -303,369 +333,821 @@ VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__0(Vtb
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       96);
+                                                       99);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
                                                 + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
-                                                       "tb_fifo.v", 
-                                                       96);
-    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
-    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
-                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
-    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_rd)", 
-                                                       "tb_fifo.v", 
-                                                       99);
-    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
-    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
                                                        102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       99);
+    vlSelf->tb_fifo__DOT__i_wr_en = 1U;
+    vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & ((IData)(1U) 
+                                                + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       102);
+    vlSelf->tb_fifo__DOT__i_rd_en = 1U;
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       105);
     vlSelf->tb_fifo__DOT__i_wr_en = 0U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       104);
+                                                       107);
     vlSelf->tb_fifo__DOT__i_rd_en = 0U;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
     co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_wr)", 
                                                        "tb_fifo.v", 
-                                                       110);
+                                                       112);
     vlSelf->tb_fifo__DOT__i_wr_en = 1U;
     vlSelf->tb_fifo__DOT__i_data_wr = 0xffU;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       114);
-    VL_WRITEF("Test 5 Failed: FIFO state incorrect\n");
+                                       116);
+    if (vlSelf->tb_fifo__DOT__o_full) {
+        VL_WRITEF("Test 5 Passed: FIFO remains full, no overwrite\n");
+    } else {
+        VL_WRITEF("Test 5 Failed: FIFO state incorrect\n");
+    }
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       123);
+                                                       124);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       123);
+                                                       124);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       123);
+                                                       124);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       123);
+                                                       124);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       123);
+                                                       124);
     vlSelf->tb_fifo__DOT__i_rd_en = 1U;
     co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_fifo.i_clk_rd)", 
                                                        "tb_fifo.v", 
-                                                       126);
+                                                       127);
     vlSelf->tb_fifo__DOT__i_rd_en = 0U;
-    co_await vlSelf->__VdlySched.delay(0x14ULL, nullptr, 
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb_fifo.v", 
-                                       128);
+                                       129);
     if (vlSelf->tb_fifo__DOT__o_empty) {
         VL_WRITEF("Test 6 Passed: FIFO remains empty, no invalid read\n");
     } else {
         VL_WRITEF("Test 6 Failed: FIFO state incorrect\n");
     }
-    co_await vlSelf->__VdlySched.delay(0x64ULL, nullptr, 
-                                       "tb_fifo.v", 
-                                       135);
-    VL_FINISH_MT("tb_fifo.v", 136, "");
-}
-
-VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__1(Vtb_fifo___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_initial__TOP__Vtiming__1\n"); );
-    // Body
-    while (1U) {
-        co_await vlSelf->__VdlySched.delay(6ULL, nullptr, 
-                                           "tb_fifo.v", 
-                                           40);
-        vlSelf->tb_fifo__DOT__i_clk_rd = (1U & (~ (IData)(vlSelf->tb_fifo__DOT__i_clk_rd)));
+    VL_WRITEF("Test Case 7 ---------------------------------\n");
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
     }
-}
-
-VL_INLINE_OPT VlCoroutine Vtb_fifo___024root___eval_initial__TOP__Vtiming__2(Vtb_fifo___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_initial__TOP__Vtiming__2\n"); );
-    // Body
-    while (1U) {
-        co_await vlSelf->__VdlySched.delay(5ULL, nullptr, 
-                                           "tb_fifo.v", 
-                                           39);
-        vlSelf->tb_fifo__DOT__i_clk_wr = (1U & (~ (IData)(vlSelf->tb_fifo__DOT__i_clk_wr)));
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
     }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       138);
+    vlSelf->tb_fifo__DOT__i_wr_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    if (vlSelf->tb_fifo__DOT__i_wr_en) {
+        vlSelf->tb_fifo__DOT__i_data_wr = (0xffU & 
+                                           ((IData)(1U) 
+                                            + (IData)(vlSelf->tb_fifo__DOT__i_data_wr)));
+    }
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       141);
+    vlSelf->tb_fifo__DOT__i_rd_en = (1U & VL_MODDIVS_III(32, (IData)(
+                                                                     VL_RANDOM_I()), (IData)(2U)));
+    VL_WRITEF("Time=%t, rst_n=%b, wr_en=%b, rd_en=%b, data_wr=%x, data_rd=%x, empty=%b, full=%b\n",
+              64,VL_TIME_UNITED_Q(1000),-9,1,(IData)(vlSelf->tb_fifo__DOT__i_rst_n),
+              1,vlSelf->tb_fifo__DOT__i_wr_en,1,(IData)(vlSelf->tb_fifo__DOT__i_rd_en),
+              8,vlSelf->tb_fifo__DOT__i_data_wr,8,(IData)(vlSelf->tb_fifo__DOT__o_data_rd),
+              1,vlSelf->tb_fifo__DOT__o_empty,1,(IData)(vlSelf->tb_fifo__DOT__o_full));
+    co_await vlSelf->__VtrigSched_hfb6dbe79__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_wr)", 
+                                                       "tb_fifo.v", 
+                                                       145);
+    vlSelf->tb_fifo__DOT__i_wr_en = 0U;
+    co_await vlSelf->__VtrigSched_h87e369e5__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_fifo.i_clk_rd)", 
+                                                       "tb_fifo.v", 
+                                                       147);
+    vlSelf->tb_fifo__DOT__i_rd_en = 0U;
+    co_await vlSelf->__VdlySched.delay(0x186a0ULL, 
+                                       nullptr, "tb_fifo.v", 
+                                       151);
+    VL_FINISH_MT("tb_fifo.v", 152, "");
 }
-
-VL_INLINE_OPT void Vtb_fifo___024root___act_comb__TOP__0(Vtb_fifo___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___act_comb__TOP__0\n"); );
-    // Body
-    vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_wr = (0xfU 
-                                                & ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr) 
-                                                   + (IData)(vlSelf->tb_fifo__DOT__i_wr_en)));
-}
-
-void Vtb_fifo___024root___act_comb__TOP__1(Vtb_fifo___024root* vlSelf);
 
 void Vtb_fifo___024root___eval_act(Vtb_fifo___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_act\n"); );
-    // Body
-    if ((0x38ULL & vlSelf->__VactTriggered.word(0U))) {
-        Vtb_fifo___024root___act_comb__TOP__0(vlSelf);
-    }
-    if ((0x39ULL & vlSelf->__VactTriggered.word(0U))) {
-        Vtb_fifo___024root___act_comb__TOP__1(vlSelf);
-    }
 }
 
 VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__0(Vtb_fifo___024root* vlSelf) {
@@ -674,12 +1156,13 @@ VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__0(Vtb_fifo___024root* 
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__0\n"); );
     // Body
     vlSelf->__Vdlyvset__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 = 0U;
-    if (vlSelf->tb_fifo__DOT__dut__DOT__update_rd) {
+    if (((~ (IData)(vlSelf->tb_fifo__DOT__o_full)) 
+         & (IData)(vlSelf->tb_fifo__DOT__i_wr_en))) {
         vlSelf->__Vdlyvval__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 
             = vlSelf->tb_fifo__DOT__i_data_wr;
         vlSelf->__Vdlyvset__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 = 1U;
         vlSelf->__Vdlyvdim0__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 
-            = vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr;
+            = (0xfU & (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr));
     }
 }
 
@@ -688,9 +1171,16 @@ VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__1(Vtb_fifo___024root* 
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__1\n"); );
     // Body
-    if (vlSelf->tb_fifo__DOT__dut__DOT__update_rd) {
-        vlSelf->tb_fifo__DOT__o_data_rd = vlSelf->tb_fifo__DOT__dut__DOT__Arry__DOT__mem
-            [vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd];
+    vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_wr 
+        = vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr;
+    if (vlSelf->tb_fifo__DOT__i_rst_n) {
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2 
+            = vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync1;
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync1 
+            = vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray;
+    } else {
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2 = 0U;
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync1 = 0U;
     }
 }
 
@@ -698,10 +1188,37 @@ VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__2(Vtb_fifo___024root* 
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__2\n"); );
+    // Init
+    CData/*4:0*/ __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__Vfuncout;
+    __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__Vfuncout = 0;
+    CData/*4:0*/ __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__bin;
+    __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__bin = 0;
     // Body
-    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr = ((IData)(vlSelf->tb_fifo__DOT__i_rst_n)
-                                               ? (IData)(vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_wr)
-                                               : 0U);
+    vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_rd 
+        = vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd;
+    if (vlSelf->tb_fifo__DOT__i_rst_n) {
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync2 
+            = vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync1;
+        if (((IData)(vlSelf->tb_fifo__DOT__i_rd_en) 
+             & (~ (IData)(vlSelf->tb_fifo__DOT__o_empty)))) {
+            vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_rd 
+                = (0x1fU & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd)));
+            __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__bin 
+                = (0x1fU & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd)));
+            __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__Vfuncout 
+                = (0x1fU & ((IData)(__Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__bin) 
+                            ^ VL_SHIFTR_III(5,5,32, (IData)(__Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__bin), 1U)));
+            vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray 
+                = __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__1__Vfuncout;
+        }
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync1 
+            = vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray;
+    } else {
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync2 = 0U;
+        vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_rd = 0U;
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray = 0U;
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync1 = 0U;
+    }
 }
 
 VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__3(Vtb_fifo___024root* vlSelf) {
@@ -709,9 +1226,10 @@ VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__3(Vtb_fifo___024root* 
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__3\n"); );
     // Body
-    if (vlSelf->__Vdlyvset__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0) {
-        vlSelf->tb_fifo__DOT__dut__DOT__Arry__DOT__mem[vlSelf->__Vdlyvdim0__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0] 
-            = vlSelf->__Vdlyvval__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0;
+    if (((~ (IData)(vlSelf->tb_fifo__DOT__o_empty)) 
+         & (IData)(vlSelf->tb_fifo__DOT__i_rd_en))) {
+        vlSelf->tb_fifo__DOT__o_data_rd = vlSelf->tb_fifo__DOT__dut__DOT__Arry__DOT__mem
+            [(0xfU & (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd))];
     }
 }
 
@@ -719,53 +1237,88 @@ VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__4(Vtb_fifo___024root* 
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__4\n"); );
+    // Init
+    CData/*4:0*/ __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__Vfuncout;
+    __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__Vfuncout = 0;
+    CData/*4:0*/ __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__bin;
+    __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__bin = 0;
     // Body
-    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd = ((IData)(vlSelf->tb_fifo__DOT__i_rst_n)
-                                               ? (IData)(vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_rd)
-                                               : 0U);
+    if (vlSelf->tb_fifo__DOT__i_rst_n) {
+        if (((IData)(vlSelf->tb_fifo__DOT__i_wr_en) 
+             & (~ (IData)(vlSelf->tb_fifo__DOT__o_full)))) {
+            vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_wr 
+                = (0x1fU & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr)));
+            __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__bin 
+                = (0x1fU & ((IData)(1U) + (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr)));
+            __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__Vfuncout 
+                = (0x1fU & ((IData)(__Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__bin) 
+                            ^ VL_SHIFTR_III(5,5,32, (IData)(__Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__bin), 1U)));
+            vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray 
+                = __Vfunc_tb_fifo__DOT__dut__DOT__bin_to_gray__0__Vfuncout;
+        }
+    } else {
+        vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_wr = 0U;
+        vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray = 0U;
+    }
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr = vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_wr;
+    vlSelf->tb_fifo__DOT__o_full = ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray) 
+                                    == ((0x18U & ((~ 
+                                                   ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2) 
+                                                    >> 3U)) 
+                                                  << 3U)) 
+                                        | (7U & (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2))));
 }
 
-VL_INLINE_OPT void Vtb_fifo___024root___nba_comb__TOP__2(Vtb_fifo___024root* vlSelf) {
+VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__5(Vtb_fifo___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_comb__TOP__2\n"); );
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__5\n"); );
     // Body
-    vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_rd = (0xfU 
-                                                & ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd) 
-                                                   + (IData)(vlSelf->tb_fifo__DOT__dut__DOT__update_rd)));
+    if (vlSelf->__Vdlyvset__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0) {
+        vlSelf->tb_fifo__DOT__dut__DOT__Arry__DOT__mem[vlSelf->__Vdlyvdim0__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0] 
+            = vlSelf->__Vdlyvval__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0;
+    }
 }
 
-void Vtb_fifo___024root___nba_comb__TOP__0(Vtb_fifo___024root* vlSelf);
+VL_INLINE_OPT void Vtb_fifo___024root___nba_sequent__TOP__6(Vtb_fifo___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___nba_sequent__TOP__6\n"); );
+    // Body
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd = vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_rd;
+    vlSelf->tb_fifo__DOT__o_empty = ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray) 
+                                     == (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync2));
+}
 
 void Vtb_fifo___024root___eval_nba(Vtb_fifo___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_nba\n"); );
     // Body
-    if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
+    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
         Vtb_fifo___024root___nba_sequent__TOP__0(vlSelf);
     }
-    if ((0x10ULL & vlSelf->__VnbaTriggered.word(0U))) {
+    if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
         Vtb_fifo___024root___nba_sequent__TOP__1(vlSelf);
     }
-    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
+    if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
         Vtb_fifo___024root___nba_sequent__TOP__2(vlSelf);
+        vlSelf->__Vm_traceActivity[1U] = 1U;
     }
     if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
         Vtb_fifo___024root___nba_sequent__TOP__3(vlSelf);
-        vlSelf->__Vm_traceActivity[1U] = 1U;
     }
-    if ((0x38ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        Vtb_fifo___024root___nba_comb__TOP__0(vlSelf);
+    if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        Vtb_fifo___024root___nba_sequent__TOP__4(vlSelf);
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+    }
+    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        Vtb_fifo___024root___nba_sequent__TOP__5(vlSelf);
+        vlSelf->__Vm_traceActivity[3U] = 1U;
     }
     if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        Vtb_fifo___024root___nba_sequent__TOP__4(vlSelf);
-    }
-    if ((0x3cULL & vlSelf->__VnbaTriggered.word(0U))) {
-        Vtb_fifo___024root___act_comb__TOP__0(vlSelf);
-    }
-    if ((0x3aULL & vlSelf->__VnbaTriggered.word(0U))) {
-        Vtb_fifo___024root___nba_comb__TOP__2(vlSelf);
+        Vtb_fifo___024root___nba_sequent__TOP__6(vlSelf);
+        vlSelf->__Vm_traceActivity[4U] = 1U;
     }
 }
 
@@ -774,13 +1327,13 @@ void Vtb_fifo___024root___timing_resume(Vtb_fifo___024root* vlSelf) {
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___timing_resume\n"); );
     // Body
-    if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
+    if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
         vlSelf->__VtrigSched_hfb6dbe79__0.resume("@(posedge tb_fifo.i_clk_wr)");
     }
-    if ((0x10ULL & vlSelf->__VactTriggered.word(0U))) {
+    if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
         vlSelf->__VtrigSched_h87e369e5__0.resume("@(posedge tb_fifo.i_clk_rd)");
     }
-    if ((0x20ULL & vlSelf->__VactTriggered.word(0U))) {
+    if ((0x10ULL & vlSelf->__VactTriggered.word(0U))) {
         vlSelf->__VdlySched.resume();
     }
 }
@@ -790,10 +1343,10 @@ void Vtb_fifo___024root___timing_commit(Vtb_fifo___024root* vlSelf) {
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___timing_commit\n"); );
     // Body
-    if ((! (8ULL & vlSelf->__VactTriggered.word(0U)))) {
+    if ((! (4ULL & vlSelf->__VactTriggered.word(0U)))) {
         vlSelf->__VtrigSched_hfb6dbe79__0.commit("@(posedge tb_fifo.i_clk_wr)");
     }
-    if ((! (0x10ULL & vlSelf->__VactTriggered.word(0U)))) {
+    if ((! (8ULL & vlSelf->__VactTriggered.word(0U)))) {
         vlSelf->__VtrigSched_h87e369e5__0.commit("@(posedge tb_fifo.i_clk_rd)");
     }
 }
@@ -805,7 +1358,7 @@ bool Vtb_fifo___024root___eval_phase__act(Vtb_fifo___024root* vlSelf) {
     Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_phase__act\n"); );
     // Init
-    VlTriggerVec<6> __VpreTriggered;
+    VlTriggerVec<5> __VpreTriggered;
     CData/*0:0*/ __VactExecute;
     // Body
     Vtb_fifo___024root___eval_triggers__act(vlSelf);
@@ -857,7 +1410,7 @@ void Vtb_fifo___024root___eval(Vtb_fifo___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtb_fifo___024root___dump_triggers__nba(vlSelf);
 #endif
-            VL_FATAL_MT("tb_fifo.v", 2, "", "NBA region did not converge.");
+            VL_FATAL_MT("tb_fifo.v", 3, "", "NBA region did not converge.");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         __VnbaContinue = 0U;
@@ -868,7 +1421,7 @@ void Vtb_fifo___024root___eval(Vtb_fifo___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtb_fifo___024root___dump_triggers__act(vlSelf);
 #endif
-                VL_FATAL_MT("tb_fifo.v", 2, "", "Active region did not converge.");
+                VL_FATAL_MT("tb_fifo.v", 3, "", "Active region did not converge.");
             }
             vlSelf->__VactIterCount = ((IData)(1U) 
                                        + vlSelf->__VactIterCount);

@@ -15,7 +15,6 @@
 
 // INCLUDE MODULE CLASSES
 #include "Vtb_fifo___024root.h"
-#include "Vtb_fifo___024unit.h"
 
 // SYMS CLASS (contains all model state)
 class alignas(VL_CACHE_LINE_BYTES)Vtb_fifo__Syms final : public VerilatedSyms {
@@ -29,10 +28,6 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_fifo__Syms final : public VerilatedSyms {
 
     // MODULE INSTANCE STATE
     Vtb_fifo___024root             TOP;
-    Vtb_fifo___024unit             TOP____024unit;
-
-    // SCOPE NAMES
-    VerilatedScope __Vscope_tb_fifo;
 
     // CONSTRUCTORS
     Vtb_fifo__Syms(VerilatedContext* contextp, const char* namep, Vtb_fifo* modelp);

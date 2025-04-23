@@ -38,7 +38,7 @@ VL_ATTR_COLD void Vtb_fifo___024root___eval_settle(Vtb_fifo___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtb_fifo___024root___dump_triggers__stl(vlSelf);
 #endif
-            VL_FATAL_MT("tb_fifo.v", 2, "", "Settle region did not converge.");
+            VL_FATAL_MT("tb_fifo.v", 3, "", "Settle region did not converge.");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         __VstlContinue = 0U;
@@ -61,14 +61,23 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__stl(Vtb_fifo___024root* vl
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
         VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
     }
-    if ((2ULL & vlSelf->__VstlTriggered.word(0U))) {
-        VL_DBG_MSGF("         'stl' region trigger index 1 is active: @([hybrid] tb_fifo.dut.count)\n");
-    }
 }
 #endif  // VL_DEBUG
 
-void Vtb_fifo___024root___act_comb__TOP__0(Vtb_fifo___024root* vlSelf);
-void Vtb_fifo___024root___act_comb__TOP__1(Vtb_fifo___024root* vlSelf);
+VL_ATTR_COLD void Vtb_fifo___024root___stl_sequent__TOP__0(Vtb_fifo___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtb_fifo__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___stl_sequent__TOP__0\n"); );
+    // Body
+    vlSelf->tb_fifo__DOT__o_full = ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray) 
+                                    == ((0x18U & ((~ 
+                                                   ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2) 
+                                                    >> 3U)) 
+                                                  << 3U)) 
+                                        | (7U & (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2))));
+    vlSelf->tb_fifo__DOT__o_empty = ((IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray) 
+                                     == (IData)(vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync2));
+}
 
 VL_ATTR_COLD void Vtb_fifo___024root___eval_stl(Vtb_fifo___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
@@ -76,10 +85,12 @@ VL_ATTR_COLD void Vtb_fifo___024root___eval_stl(Vtb_fifo___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_fifo___024root___eval_stl\n"); );
     // Body
     if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
-        Vtb_fifo___024root___act_comb__TOP__0(vlSelf);
-    }
-    if ((3ULL & vlSelf->__VstlTriggered.word(0U))) {
-        Vtb_fifo___024root___act_comb__TOP__1(vlSelf);
+        Vtb_fifo___024root___stl_sequent__TOP__0(vlSelf);
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
     }
 }
 
@@ -110,22 +121,19 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__act(Vtb_fifo___024root* vl
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @([hybrid] tb_fifo.dut.count)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge tb_fifo.i_clk_wr or negedge tb_fifo.i_rst_n)\n");
     }
     if ((2ULL & vlSelf->__VactTriggered.word(0U))) {
         VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge tb_fifo.i_clk_rd or negedge tb_fifo.i_rst_n)\n");
     }
     if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 2 is active: @(posedge tb_fifo.i_clk_wr or negedge tb_fifo.i_rst_n)\n");
+        VL_DBG_MSGF("         'act' region trigger index 2 is active: @(posedge tb_fifo.i_clk_wr)\n");
     }
     if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge tb_fifo.i_clk_wr)\n");
+        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge tb_fifo.i_clk_rd)\n");
     }
     if ((0x10ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 4 is active: @(posedge tb_fifo.i_clk_rd)\n");
-    }
-    if ((0x20ULL & vlSelf->__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'act' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -140,22 +148,19 @@ VL_ATTR_COLD void Vtb_fifo___024root___dump_triggers__nba(Vtb_fifo___024root* vl
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @([hybrid] tb_fifo.dut.count)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge tb_fifo.i_clk_wr or negedge tb_fifo.i_rst_n)\n");
     }
     if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
         VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge tb_fifo.i_clk_rd or negedge tb_fifo.i_rst_n)\n");
     }
     if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @(posedge tb_fifo.i_clk_wr or negedge tb_fifo.i_rst_n)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @(posedge tb_fifo.i_clk_wr)\n");
     }
     if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge tb_fifo.i_clk_wr)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge tb_fifo.i_clk_rd)\n");
     }
     if ((0x10ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @(posedge tb_fifo.i_clk_rd)\n");
-    }
-    if ((0x20ULL & vlSelf->__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -169,30 +174,31 @@ VL_ATTR_COLD void Vtb_fifo___024root___ctor_var_reset(Vtb_fifo___024root* vlSelf
     vlSelf->tb_fifo__DOT__i_clk_wr = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_wr_en = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_data_wr = VL_RAND_RESET_I(8);
+    vlSelf->tb_fifo__DOT__o_full = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_clk_rd = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__i_rd_en = VL_RAND_RESET_I(1);
     vlSelf->tb_fifo__DOT__o_data_rd = VL_RAND_RESET_I(8);
     vlSelf->tb_fifo__DOT__o_empty = VL_RAND_RESET_I(1);
-    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr = VL_RAND_RESET_I(4);
-    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd = VL_RAND_RESET_I(4);
-    vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_wr = VL_RAND_RESET_I(4);
-    vlSelf->tb_fifo__DOT__dut__DOT__n_ptr_rd = VL_RAND_RESET_I(4);
-    vlSelf->tb_fifo__DOT__dut__DOT__update_rd = VL_RAND_RESET_I(1);
-    vlSelf->tb_fifo__DOT__dut__DOT__count = VL_RAND_RESET_I(4);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_gray = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_gray = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync1 = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_wr_sync2 = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync1 = VL_RAND_RESET_I(5);
+    vlSelf->tb_fifo__DOT__dut__DOT__ptr_rd_sync2 = VL_RAND_RESET_I(5);
     for (int __Vi0 = 0; __Vi0 < 16; ++__Vi0) {
         vlSelf->tb_fifo__DOT__dut__DOT__Arry__DOT__mem[__Vi0] = VL_RAND_RESET_I(8);
     }
+    vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_wr = VL_RAND_RESET_I(5);
+    vlSelf->__Vdly__tb_fifo__DOT__dut__DOT__ptr_rd = VL_RAND_RESET_I(5);
     vlSelf->__Vdlyvdim0__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 = 0;
     vlSelf->__Vdlyvval__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 = VL_RAND_RESET_I(8);
     vlSelf->__Vdlyvset__tb_fifo__DOT__dut__DOT__Arry__DOT__mem__v0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__dut__DOT__count__0 = VL_RAND_RESET_I(4);
-    vlSelf->__VstlDidInit = 0;
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__dut__DOT__count__1 = VL_RAND_RESET_I(4);
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_rd__0 = VL_RAND_RESET_I(1);
-    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_rst_n__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_wr__0 = VL_RAND_RESET_I(1);
-    vlSelf->__VactDidInit = 0;
-    for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
+    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_rst_n__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__tb_fifo__DOT__i_clk_rd__0 = VL_RAND_RESET_I(1);
+    for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }
